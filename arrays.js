@@ -26,3 +26,19 @@ function checkElements(){
     })
     
 }
+//Write a function that accepts an array of numbers and uses the forEach() method to console.log each number multiplied by 2.
+function multiplication(numbers){
+    numbers.forEach((number) =>{
+    console.log(number*2);
+    });
+}
+multiplication([20,30,40,50]);
+
+//Write a function that takes in an array of numbers and consoles the first four items multiplied by 8 and the last two added by 5. Console the array with the new values
+function changeArray(arr){
+ const firstFour= arr.slice(0,4).map(item=>item*8); 
+ const lastTwo= arr.slice(-2).map(item=> item+5);
+ const newArr = firstFour.concat(lastTwo);
+ console.log(newArr);
+}
+changeArray([numbers]);
