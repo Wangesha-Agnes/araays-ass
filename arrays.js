@@ -1,31 +1,47 @@
 //Given an array of strings, use a function to reverse all the elements in the string in ascending order and the specific elements in descending order
 
-function sorting(){
-    const words = ['Hey',there,"Wangesha",'Dan'];
-    console.log(words.sort());
-    console.log(words.reverse());
-}
+// function reversedStringsInArray(){
+//     const words = (['Hey',"there","Wangesha",'Dan']);
+//     constreversedWords = arr.map(str => [...str].reverse().join(''));
+//     console.log(reversedwords);
+//     //console.log(words.reverse());
+// }
+function reversedStringsInArray(arr){
+const reversedStrings = arr.map(str => [...str].reverse().join(''));
+console.log(reversedStrings);}
+reversedStringsInArray(["Kitui","Nairobi","Machakos","Nakuru"]);
 
 //Given an array of objects, where each object represents an employee with an id, name, and salary property, write a function that returns a new array of employee objects sorted by their salary in ascending order.
-let employee = [{id:1}, {name:"Agnes"}, {salary:[1000,2500,500,200]}];
-employee.sort(function(a,b){
-    return a.salary - (b.salary);
-});
-employee.forEach((person)=> console.log(employee.salary));
 
-////Using JS functions and an array of numbers, return positive if an element within the array is positive, negative if an element is negative, else zero
-function checkElements(){
-    let arr=arr.forEach(element =>{
-        if(element>0){
-            console.log("positive");
-        }else if(element<0){
-            console.log("negative");
-    }else{
-        console.log("zero");
-    }
-    })
-    
+function sortBySalary(employees){
+    return employees.sort((a,b) => a.salary - b.salary);
 }
+
+const employees = [
+    {id: 1, name:'Agnes', salary: 50000},
+    {id: 2, name:'Wangesha',salary: 80000},
+    {id: 3, name:'Redempta',salary:20000}
+]
+const sortedEmployees = sortBySalary(employees);
+console.log(sortedEmployees);
+
+
+
+//Using JS functions and an array of numbers, return positive if an element within the array is positive, negative if an element is negative, else zero
+function checkElements(array,index){
+const number = array[index]
+    if(number>0){
+        return number + "is positive";
+    }else if(number<0){
+        return number + "is negative";
+    }else{
+        return number + "is zero";
+    }  
+}
+const numbers = [10, -10, 0, 5, -60];
+console.log(checkElements(numbers, 1));
+
+
 //Write a function that accepts an array of numbers and uses the forEach() method to console.log each number multiplied by 2.
 function multiplication(numbers){
     numbers.forEach((number) =>{
